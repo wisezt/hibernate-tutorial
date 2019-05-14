@@ -31,7 +31,9 @@ public class DeleteStudentDemo {
             // read the student object
 
 
-           List<Student> theStudents =  theSession.createQuery("From Student s where  s.firstName = 'Ting01'").getResultList();
+           theSession.createQuery("delete from Student where  id > 3002 ").executeUpdate();
+
+            List<Student> theStudents =  theSession.createQuery("From Student").getResultList();
 
             displayStudents(theStudents);
 
